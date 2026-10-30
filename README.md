@@ -1,8 +1,8 @@
 # معرض الأعمال والسيرة الذاتية المهنية | أحمد علي النظاري
 ### Luxury Woodworking & Interior Engineering Portfolio
 
-> **رابط المعاينة المباشرة أونلاين (Live Demo):**  
-> 🌐 **[https://reborn-device-79hw7b5.shipstatic.com](https://reborn-device-79hw7b5.shipstatic.com)**  
+> **رابط المعاينة المباشرة أونلاين (Live Demo - دائم مدى الحياة):**  
+> 🌐 **[https://ahmed-alnazari.surge.sh](https://ahmed-alnazari.surge.sh)**  
 > 🌐 **[GitHub Pages Backup](https://azamahmed77.github.io/Ahmed-AlNazari-Portfolio/)**
 
 ---
