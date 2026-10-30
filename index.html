@@ -1884,6 +1884,26 @@
         }
       });
     }
+
+    // Always scroll to top on page reload/refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    window.addEventListener('beforeunload', function() {
+      window.scrollTo(0, 0);
+    });
+
+    window.addEventListener('load', function() {
+      const navEntry = performance.getEntriesByType('navigation')[0];
+      const isReload = navEntry ? navEntry.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+      if (isReload || window.location.hash === '#contact' || window.location.hash === '#') {
+        window.scrollTo(0, 0);
+        if (window.location.hash) {
+          history.replaceState(null, null, window.location.pathname);
+        }
+      }
+    });
   </script>
 
 </body>
