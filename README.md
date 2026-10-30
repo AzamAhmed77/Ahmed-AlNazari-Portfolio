@@ -2,7 +2,8 @@
 ### Luxury Woodworking & Interior Engineering Portfolio
 
 > **رابط المعاينة المباشرة أونلاين (Live Demo):**  
-> 🌐 **[https://azamahmed77.github.io/Ahmed-AlNazari-Portfolio/](https://azamahmed77.github.io/Ahmed-AlNazari-Portfolio/)**
+> 🌐 **[https://reborn-device-79hw7b5.shipstatic.com](https://reborn-device-79hw7b5.shipstatic.com)**  
+> 🌐 **[GitHub Pages Backup](https://azamahmed77.github.io/Ahmed-AlNazari-Portfolio/)**
 
 ---
 
