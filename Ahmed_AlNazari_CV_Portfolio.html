@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>السيرة الذاتية ومعرض الأعمال | المعلم أحمد علي قاسم النظاري</title>
+  <title>السيرة الذاتية ومعرض الأعمال الحية | المعلم أحمد علي قاسم النظاري</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -11,14 +11,16 @@
     :root {
       --primary-wood: #8B5A2B;
       --wood-dark: #4A2E1B;
+      --wood-deep: #321B0D;
       --wood-light: #C49A6C;
       --wood-cream: #FDFBF7;
-      --bg-card: #FFFFFF;
       --accent-gold: #D4AF37;
+      --gold-light: #F5D78E;
       --text-main: #2A2421;
       --text-muted: #6B625B;
       --border-color: #E8E0D5;
-      --shadow-soft: 0 15px 45px rgba(74, 46, 27, 0.08);
+      --shadow-card: 0 10px 30px rgba(74, 46, 27, 0.08);
+      --shadow-hover: 0 18px 40px rgba(74, 46, 27, 0.16);
     }
 
     * {
@@ -35,19 +37,19 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Sticky Luxury Toolbar */
+    /* Sticky Modern Header Navigation */
     .toolbar {
       position: sticky;
       top: 0;
-      background: rgba(59, 35, 19, 0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(50, 27, 13, 0.96);
+      backdrop-filter: blur(14px);
       color: #fff;
-      padding: 12px 30px;
+      padding: 12px 35px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.22);
+      box-shadow: 0 4px 25px rgba(0,0,0,0.25);
       border-bottom: 2px solid var(--accent-gold);
     }
 
@@ -68,7 +70,7 @@
 
     .toolbar-btn {
       border: none;
-      padding: 9px 20px;
+      padding: 10px 22px;
       font-size: 0.95rem;
       font-weight: 800;
       border-radius: 8px;
@@ -81,7 +83,6 @@
       font-family: inherit;
     }
 
-    /* Luxury Emerald Button for WhatsApp */
     .btn-whatsapp {
       background: linear-gradient(135deg, #1a8a4f 0%, #25D366 100%);
       color: #FFFFFF !important;
@@ -91,41 +92,40 @@
 
     .btn-whatsapp:hover {
       background: linear-gradient(135deg, #157341 0%, #20b857 100%);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
       transform: translateY(-2px);
     }
 
-    /* Luxury Brushed Gold Button for PDF */
-    .btn-pdf {
+    .btn-call {
       background: linear-gradient(135deg, #C59A45 0%, #E5C370 50%, #B88A35 100%);
       color: #2D1A0D !important;
       border: 1px solid #FFE49E;
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
     }
 
-    .btn-pdf:hover {
+    .btn-call:hover {
       background: linear-gradient(135deg, #D4AF37 0%, #F5D78E 50%, #C59A45 100%);
       box-shadow: 0 6px 22px rgba(212, 175, 55, 0.55);
       transform: translateY(-2px);
     }
 
-    /* Desktop Spacious Page Container */
+    /* Main Container */
     .page-container {
-      max-width: 1200px;
+      max-width: 1250px;
       width: 95%;
       margin: 30px auto;
       background: #fff;
       border-radius: 16px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-card);
       overflow: hidden;
       border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
     }
 
+    /* Header Banner */
     .header-banner {
-      background: linear-gradient(135deg, #3B2313 0%, #5C3A21 50%, #754724 100%);
+      background: linear-gradient(135deg, #321B0D 0%, #4A2E1B 45%, #754724 100%);
       color: #fff;
-      padding: 45px 50px 40px;
+      padding: 50px 50px 42px;
       position: relative;
     }
 
@@ -148,39 +148,39 @@
     }
 
     .header-name {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 900;
       letter-spacing: -0.5px;
       margin-bottom: 8px;
       color: #FFFFFF;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
     }
 
     .header-title {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: #F3E5AB;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .header-badge {
       display: inline-block;
       background: rgba(212, 175, 55, 0.22);
-      border: 1px solid #D4AF37;
+      border: 1px solid var(--accent-gold);
       color: #FFF8E7;
-      padding: 5px 18px;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      padding: 6px 20px;
+      border-radius: 25px;
+      font-size: 0.95rem;
       font-weight: 700;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(5px);
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
-      margin-top: 30px;
-      padding-top: 24px;
+      margin-top: 32px;
+      padding-top: 26px;
       border-top: 1px solid rgba(255,255,255,0.18);
     }
 
@@ -193,15 +193,15 @@
     }
 
     .contact-icon {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       background: rgba(255,255,255,0.15);
       border: 1px solid rgba(212, 175, 55, 0.4);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.05rem;
       flex-shrink: 0;
     }
 
@@ -222,32 +222,290 @@
       text-decoration: underline;
     }
 
-    .content-body {
-      padding: 45px 50px;
-    }
-
-    .section-title {
-      font-size: 1.45rem;
-      font-weight: 900;
-      color: var(--wood-dark);
-      margin-bottom: 20px;
+    /* Interactive Filter Tabs */
+    .filter-wrapper {
+      background: #F8F3ED;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       gap: 12px;
-      position: relative;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
+    }
+
+    .filter-label {
+      font-weight: 800;
+      color: var(--wood-dark);
+      font-size: 0.95rem;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-tab {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--wood-dark);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .filter-tab:hover {
+      border-color: var(--primary-wood);
+      transform: translateY(-1px);
+    }
+
+    .filter-tab.active {
+      background: var(--wood-dark);
+      color: #FFFFFF;
+      border-color: var(--wood-dark);
+      box-shadow: 0 4px 12px rgba(74, 46, 27, 0.25);
+    }
+
+    /* Section Styling */
+    .content-section {
+      padding: 45px 50px;
+    }
+
+    .section-header-box {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--wood-dark);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
     }
 
     .section-title::before {
       content: "";
       width: 6px;
-      height: 26px;
+      height: 28px;
       background: var(--primary-wood);
       border-radius: 3px;
     }
 
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-right: 18px;
+    }
+
+    /* Video Cards Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold);
+    }
+
+    .video-player-box {
+      width: 100%;
+      height: 380px;
+      background: #110B07;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-player-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .video-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(30, 16, 8, 0.85);
+      color: #FCE8B2;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      z-index: 2;
+    }
+
+    .music-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(26, 138, 79, 0.9);
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .video-info {
+      padding: 18px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .video-title {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--wood-dark);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .video-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .video-tag {
+      font-size: 0.78rem;
+      background: #F3ECE4;
+      color: var(--wood-dark);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    /* Photo Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 25px;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold);
+    }
+
+    .portfolio-img-box {
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+      background: #EDE4DA;
+      position: relative;
+    }
+
+    .portfolio-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img-box img {
+      transform: scale(1.06);
+    }
+
+    .portfolio-zoom-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(42, 24, 13, 0.88);
+      color: #FFE6A3;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transition: all 0.2s;
+    }
+
+    .portfolio-item:hover .portfolio-zoom-badge {
+      background: rgba(30, 16, 8, 0.96);
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      padding: 18px 22px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portfolio-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--wood-dark);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .portfolio-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      background: #F1E7DD;
+      color: var(--wood-dark);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 800;
+      align-self: flex-start;
+      margin-top: 8px;
+      border: 1px solid #E5D5C5;
+    }
+
+    /* Resume Section */
     .summary-box {
       background: #FDFBF7;
-      border-right: 4px solid var(--primary-wood);
+      border-right: 5px solid var(--primary-wood);
       padding: 24px 28px;
       border-radius: 0 10px 10px 0;
       font-size: 1.08rem;
@@ -345,7 +603,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 18px;
-      margin-bottom: 40px;
     }
 
     .skill-card {
@@ -378,139 +635,21 @@
       line-height: 1.6;
     }
 
-    /* Portfolio Section */
-    .portfolio-header {
-      background: #3B2313;
-      color: #fff;
-      padding: 35px 50px;
-      margin-top: 40px;
-      border-radius: 12px 12px 0 0;
-      position: relative;
-    }
-
-    .portfolio-header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-      gap: 25px;
-      padding: 40px 50px;
-      background: #FDFBF8;
-    }
-
-    .portfolio-item {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      position: relative;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(74, 46, 27, 0.15);
-      border-color: var(--accent-gold);
-    }
-
-    .portfolio-img-box {
-      width: 100%;
-      height: 260px;
-      overflow: hidden;
-      background: #EDE4DA;
-      position: relative;
-    }
-
-    .portfolio-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .portfolio-item:hover .portfolio-img-box img {
-      transform: scale(1.06);
-    }
-
-    .portfolio-zoom-badge {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      background: rgba(42, 24, 13, 0.85);
-      color: #FFE6A3;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      opacity: 0.9;
-      transition: opacity 0.2s;
-    }
-
-    .portfolio-item:hover .portfolio-zoom-badge {
-      opacity: 1;
-      background: rgba(37, 21, 11, 0.95);
-      color: #FFFFFF;
-    }
-
-    .portfolio-info {
-      padding: 18px 22px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .portfolio-title {
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--wood-dark);
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-
-    .portfolio-tag {
-      display: inline-block;
-      font-size: 0.8rem;
-      background: #F1E7DD;
-      color: var(--wood-dark);
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-weight: 800;
-      align-self: flex-start;
-      margin-top: 8px;
-      border: 1px solid #E5D5C5;
-    }
-
+    /* Footer */
     .footer-bar {
-      background: #2A180D;
+      background: #251307;
       color: #F0E6DD;
       text-align: center;
-      padding: 30px 25px;
+      padding: 35px 25px;
       font-size: 1rem;
+      border-top: 3px solid var(--accent-gold);
     }
 
     .footer-contact {
       display: flex;
       justify-content: center;
-      gap: 28px;
-      margin-top: 14px;
+      gap: 30px;
+      margin-top: 16px;
       flex-wrap: wrap;
     }
 
@@ -613,58 +752,44 @@
       transform: scale(1.1);
     }
 
-    @media print {
-      body {
-        background: #fff;
-      }
-      .toolbar, .portfolio-zoom-badge, .lightbox-modal {
-        display: none !important;
-      }
-      .page-container {
-        max-width: 100%;
-        margin: 0;
-        box-shadow: none;
-        border: none;
-        border-radius: 0;
-      }
-      .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        page-break-before: always;
-      }
-      .portfolio-item {
-        page-break-inside: avoid;
-        box-shadow: none !important;
-      }
-    }
-
     @media (max-width: 900px) {
-      .header-banner, .content-body, .portfolio-grid {
+      .header-banner, .content-section {
         padding: 30px 24px;
       }
-      .portfolio-grid {
+      .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       }
       .header-name {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
       .toolbar {
-        padding: 10px 18px;
+        padding: 12px 20px;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         text-align: center;
+      }
+      .video-player-box {
+        height: 320px;
       }
     }
 
     @media (max-width: 600px) {
-      .portfolio-grid {
+      .gallery-grid, .video-grid {
         grid-template-columns: 1fr;
       }
       .header-name {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
       }
       .toolbar-actions {
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
+      }
+      .toolbar-btn {
+        flex: 1;
+        justify-content: center;
+        font-size: 0.88rem;
+        padding: 8px 14px;
       }
     }
   </style>
@@ -672,29 +797,29 @@
 <body>
 
   <!-- Floating Navigation Toolbar -->
-  <div class="toolbar">
+  <header class="toolbar">
     <div class="toolbar-title">
-      <span>🪵 السيرة الذاتية ومعرض الأعمال | أحمد علي قاسم النظاري</span>
+      <span>🪵 أحمد علي قاسم النظاري | ديكورات خشبية وموبيليا فاخرة</span>
     </div>
     <div class="toolbar-actions">
       <a href="https://wa.me/966530216295" target="_blank" class="toolbar-btn btn-whatsapp">
         <span>💬</span> واتساب مباشر
       </a>
-      <button onclick="window.print()" class="toolbar-btn btn-pdf">
-        <span>🖨️</span> طباعة وحفظ PDF
-      </button>
+      <a href="tel:+966530216295" class="toolbar-btn btn-call">
+        <span>📞</span> اتصال مباشر
+      </a>
     </div>
-  </div>
+  </header>
 
   <div class="page-container">
 
-    <!-- Header Section -->
+    <!-- Hero Header Banner -->
     <header class="header-banner">
       <div class="header-content">
         <div>
           <h1 class="header-name">أحمد علي قاسم النظاري</h1>
-          <div class="header-title">معلم أول نجارة موبيليا وديكورات داخلية (شاشات • باركيه • تكسيات)</div>
-          <span class="header-badge">⭐ أكثر من 25 عاماً من الخبرة والإتقان المهني</span>
+          <div class="header-title">معلم أول نجارة موبيليا وديكورات داخلية (شاشات • باركيه • تكسيات • دريسنج روم)</div>
+          <span class="header-badge">⭐ أكثر من 25 عاماً من الخبرة والإتقان المهني العريق</span>
         </div>
       </div>
 
@@ -708,7 +833,7 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <div><strong>محل الإقامة:</strong> الدمام، المملكة العربية السعودية</div>
+          <div><strong>محل الإقامة:</strong> الدمام والمنطقة الشرقية، المملكة العربية السعودية</div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🌐</div>
@@ -717,250 +842,452 @@
       </div>
     </header>
 
-    <!-- Main Content Body -->
-    <main class="content-body">
+    <!-- Interactive Filter Tabs -->
+    <nav class="filter-wrapper">
+      <span class="filter-label">🏷️ تصفية المعرض:</span>
+      <button class="filter-tab active" onclick="filterGallery('all', this)">🌟 عرض كل الأعمال</button>
+      <button class="filter-tab" onclick="filterGallery('video', this)">🎥 فيديوهات حية من الموقع (8)</button>
+      <button class="filter-tab" onclick="filterGallery('tv', this)">📺 ديكورات وتكسيات الشاشات</button>
+      <button class="filter-tab" onclick="filterGallery('bedroom', this)">🛏️ غرف النوم والتسريحات</button>
+      <button class="filter-tab" onclick="filterGallery('doors', this)">🪵 الباركيه والأبواب المخفية</button>
+      <button class="filter-tab" onclick="filterGallery('closet', this)">🚪 الدريسنج روم والتكسيات الكاملة</button>
+    </nav>
 
-      <!-- Summary -->
-      <section>
-        <h2 class="section-title">النبذة المهنية</h2>
-        <div class="summary-box">
-          معلم وخبير نجارة موبيليا وأعمال ديكور داخلي بخبرة عريقة تتجاوز <strong>25 عاماً في الصنعة</strong> (منها 4 سنوات داخل المملكة العربية السعودية - الدمام، و21 عاماً في اليمن). أتمتع بإتقان شامل لتفصيل وتنفيذ الموبيليا والأثاث الراقي (غرف نوم، دواليب، مطابخ، صالونات)، وخبير متخصص في <strong>تنفيذ تكسيات الجدران الحديثة وديكورات الشاشات التلفزيونية العصرية (TV Units)</strong>، مع <strong>احتراف تركيب أرضيات الباركيه والنعلات</strong>، و<strong>إتقان التمديدات الكهربائية الديكورية المصاحبة (إنارة الليد المخفية، ليد بروفايل، وأفياش الشاشات)</strong> لتسليم أعمال ديكورية متكاملة بأعلى دقة وتشطيب هندسي راقٍ.
-        </div>
-      </section>
-
-      <!-- Experience -->
-      <section>
-        <h2 class="section-title">الخبرات المهنية (25 عاماً)</h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <div class="timeline-role">معلم نجار موبيليا وديكورات داخلية وتكسيات</div>
-              <div class="timeline-period">2022 – حتى الآن (4 سنوات)</div>
-            </div>
-            <div class="timeline-company">المملكة العربية السعودية — الدمام والمنطقة الشرقية</div>
-            <ul class="timeline-list">
-              <li>تنفيذ وتفصيل أحدث موديلات خلفيات الشاشات العصرية (TV Units) وتكسيات الحوائط (بديل خشب، بديل رخام، بانوهات).</li>
-              <li>تفصيل وتركيب غرف النوم المودرن الفندقية، الكومودينات المعلقة، وتسريحات الميك آب بمرايا مقوسة مع ليد مخفي.</li>
-              <li>تنفيذ ممرات وغرف الدريسنج روم (Dressing Rooms) بدواليب خشبية وواجهات زجاجية وإضاءات رفوف داخلية.</li>
-              <li>تفصيل وتركيب الأبواب المخفية (Flush Hidden Doors) المتساوية انسيابياً مع تكسيات الجدران.</li>
-              <li>تركيب أرضيات الباركيه بأنواعها (العادي والمتعرج Herringbone) مع ضبط النعلات والفواصل بدقة تامة.</li>
-              <li>إتقان التأسيسات والتوصيلات الكهربائية الديكورية المدمجة، وتركيب مفاتيح وأفياش الشاشات ومحولات الليد.</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <div class="timeline-role">معلم أول نجارة وتصنيع موبيليا وديكور</div>
-              <div class="timeline-period">2001 – 2022 (21 عاماً)</div>
-            </div>
-            <div class="timeline-company">اليمن — ورش ومصانع النجارة المتقدمة</div>
-            <ul class="timeline-list">
-              <li>إدارة وتنفيذ كافة مراحل التصنيع الخشبي للموبيليا الكاملة (غرف نوم كلاسيك ومودرن، مطابخ، صالونات، دواليب).</li>
-              <li>قص وتجميع وتشريح الأخشاب الطبيعية والصناعية (MDF، زان، سويدي، سنديان، لاتيه، قشرة طبيعية وفورميكا).</li>
-              <li>استخدام وصيانة معدات النجارة الاحترافية الثابتة والمحمولة بدقة وأمان تام.</li>
-              <li>الإشراف على فرق العمل من فنيين ومساعدين وضمان تسليم الأعمال وفق أصول الصنعة ورضا العملاء.</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section>
-        <h2 class="section-title">المهارات الفنية والتخصصية</h2>
-        <div class="skills-grid">
-          
-          <div class="skill-card">
-            <div class="skill-card-title">📺 ديكورات وتكسيات الشاشات</div>
-            <div class="skill-card-desc">تفصيل خلفيات الشاشات العصرية بحواف منحنية (Curved)، رفوف معلقة، وتكسيات خشبية هندسية.</div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-title">🪵 أرضيات الباركيه والأبواب</div>
-            <div class="skill-card-desc">تركيب باركيه عادي ومتعرج (Herringbone)، تثبيت النعلات، وتفصيل وتركيب الأبواب المخفية (Flush Doors).</div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-title">⚡ التمديدات الكهربائية الديكورية</div>
-            <div class="skill-card-desc">تأسيس وتركيب إضاءات الليد المخفية، ليد بروفايل، سبوت لايت، ونقاط وأفياش الشاشات الجدارية.</div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-title">🛏️ غرف النوم والدريسنج روم</div>
-            <div class="skill-card-desc">تفصيل غرف النوم المودرن، الكومودينات العائمة، دواليب السحاب، والخزائن الزجاجية الفاخرة.</div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-title">📐 القياسات وقراءة المخططات</div>
-            <div class="skill-card-desc">أخذ المقاسات الموقعية بدقة مليمترية، قراءة المخططات والكتالوجات، وحل المعضلات المعمارية بالموقع.</div>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-card-title">🤝 سمات العمل والالتزام</div>
-            <div class="skill-card-desc">الأمانة التامة، الالتزام الصارم بمواعيد التسليم، سرعة الإنجاز، وحسن التعامل مع العملاء والمقاولين.</div>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Portfolio Section -->
-    <section>
-      <div class="portfolio-header">
-        <h2 style="font-size: 1.65rem; font-weight: 900; margin-bottom: 6px;">📷 معرض الأعمال الحية الموثقة (Portfolio)</h2>
-        <p style="color: #F3E5AB; font-size: 1.02rem;">نماذج حقيقية من مشاريع تم تنفيذها بيد المعلم أحمد علي قاسم النظاري في الدمام والمملكة (اضغط على أي صورة للتكبير والمعاينة)</p>
+    <!-- Section 1: Live Video Showcase -->
+    <section class="content-section" id="videosSection" style="background: #FAF7F2; border-bottom: 1px solid var(--border-color);">
+      <div class="section-header-box">
+        <h2 class="section-title">🎥 معرض الفيديوهات الحية التوثيقية من مواقع العمل</h2>
+        <p class="section-subtitle">مقاطع حية حقيقية توثق مراحل التشطيب وتسليم المشاريع في الدمام مع موسيقى صوتية هادئة</p>
       </div>
 
-      <div class="portfolio-grid">
+      <div class="video-grid">
 
-        <!-- Item 1 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/tv_unit_luxury.png', 'ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق')">
+        <!-- Video 1 -->
+        <article class="video-card gallery-item" data-category="video tv">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 35 ثانية</span>
+            <span class="music-badge">🎵 جيتار هادئ</span>
+            <video preload="none" poster="portfolio_videos/video_1_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_1.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">تفصيل وتشطيب جدارية شاشة عصرية بحواف منحنية (Curved) مع إنارة ليد مخفية</h3>
+            <div class="video-tags">
+              <span class="video-tag">شاشات منحنية</span>
+              <span class="video-tag">ليد بروفايل</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 2 -->
+        <article class="video-card gallery-item" data-category="video bedroom">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 25 ثانية</span>
+            <span class="music-badge">🎵 لحن دافئ</span>
+            <video preload="none" poster="portfolio_videos/video_2_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_2.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">تسريحة ميك آب مودرن مع مرايا مقوسة بإضاءة دافئة وأدراج خشبية عائمة</h3>
+            <div class="video-tags">
+              <span class="video-tag">تسريحة مودرن</span>
+              <span class="video-tag">مرايا ليد</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 3 -->
+        <article class="video-card gallery-item" data-category="video tv closet">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 دقيقة و12 ثانية</span>
+            <span class="music-badge">🎵 ألحان السكينة</span>
+            <video preload="none" poster="portfolio_videos/video_3_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_3.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">جولة شاملة في مشروع ديكور داخلي متكامل وتكسيات جدران فاخرة ودواليب</h3>
+            <div class="video-tags">
+              <span class="video-tag">مشروع متكامل</span>
+              <span class="video-tag">تكسيات راقية</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 4 -->
+        <article class="video-card gallery-item" data-category="video doors">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 23 ثانية</span>
+            <span class="music-badge">🎵 نغمات وترية</span>
+            <video preload="none" poster="portfolio_videos/video_4_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_4.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">تنفيذ وتركيب أرضيات باركيه خشبية مع ضبط الفواصل والنعلات بدقة هندسية</h3>
+            <div class="video-tags">
+              <span class="video-tag">باركيه خشب</span>
+              <span class="video-tag">نعلات</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 5 -->
+        <article class="video-card gallery-item" data-category="video doors">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 13 ثانية</span>
+            <span class="music-badge">🎵 أنغام كلاسيك</span>
+            <video preload="none" poster="portfolio_videos/video_5_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_5.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">تركيب وضبط انسيابية الأبواب المخفية (Flush Hidden Doors) المتساوية مع التكسية</h3>
+            <div class="video-tags">
+              <span class="video-tag">أبواب مخفية</span>
+              <span class="video-tag">مفصلات دفن</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 6 (Untouched original voice as requested by user) -->
+        <article class="video-card gallery-item" data-category="video doors">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 15 ثانية</span>
+            <span class="music-badge" style="background: rgba(184, 138, 53, 0.95); color: #FFF;">🎙️ شرح صوتي أصلي</span>
+            <video preload="none" poster="portfolio_videos/video_6_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_6.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">شرح وتوثيق حي لتركيب أرضيات الباركيه المتعرج (Herringbone) وضبط النعلات (بصوت المعلم)</h3>
+            <div class="video-tags">
+              <span class="video-tag">باركيه هيرنجبون</span>
+              <span class="video-tag">شرح ميداني</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 7 -->
+        <article class="video-card gallery-item" data-category="video closet">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 33 ثانية</span>
+            <span class="music-badge">🎵 إيقاع عصري</span>
+            <video preload="none" poster="portfolio_videos/video_7_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_7.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">توثيق تشطيب وتجميع غرف الدريسنج روم (Dressing Rooms) بدواليب زجاجية مضيئة</h3>
+            <div class="video-tags">
+              <span class="video-tag">دريسنج روم</span>
+              <span class="video-tag">دواليب زجاج</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Video 8 -->
+        <article class="video-card gallery-item" data-category="video tv">
+          <div class="video-player-box">
+            <span class="video-badge">🎬 16 ثانية</span>
+            <span class="music-badge">🎵 بلوز ناعم</span>
+            <video preload="none" poster="portfolio_videos/video_8_poster.jpg" controls playsinline>
+              <source src="portfolio_videos/video_8.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">تسليم ديكور شاشة زاوية بحواف خشبية نصف دائرية وإنارة شريطية متناغمة</h3>
+            <div class="video-tags">
+              <span class="video-tag">شاشات زاوية</span>
+              <span class="video-tag">أعمدة خشبية</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 2: High Resolution Photo Gallery -->
+    <section class="content-section" id="photosSection">
+      <div class="section-header-box">
+        <h2 class="section-title">📷 معرض الصور الفاخرة عالي الدقة (15 مشروعاً)</h2>
+        <p class="section-subtitle">اضغط على أي صورة للتكبير والمعاينة بالحجم الكامل بجودة فائقة الدقة</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- Photo 1 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/tv_unit_luxury.png', 'ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/tv_unit_luxury.png" alt="ديكور شاشة فاخر مع إضاءة ليد">
+            <img src="portfolio_images/tv_unit_luxury.png" alt="ديكور شاشة فاخر مع إضاءة ليد" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق</div>
+            <h3 class="portfolio-title">ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق</h3>
             <span class="portfolio-tag">تكسيات شاشات • ليد بروفايل</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 2 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/tv_unit_slats.png', 'تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة')">
+        <!-- Photo 2 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/modern_tv_marble_wood.jpg', 'ديكور شاشة حديث يجمع بين تكسيات بديل الخشب وبديل الرخام وإنارة رأسية ليد بروفايل')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/tv_unit_slats.png" alt="تكسيات شرائح خشبية">
+            <img src="portfolio_images/modern_tv_marble_wood.jpg" alt="ديكور شاشة بديل رخام وخشب" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة</div>
+            <h3 class="portfolio-title">ديكور شاشة حديث يجمع بين تكسيات بديل الخشب وبديل الرخام وإنارة رأسية ليد بروفايل</h3>
+            <span class="portfolio-tag">تكسيات شاشات • بديل رخام</span>
+          </div>
+        </article>
+
+        <!-- Photo 3 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/tv_unit_slats.png', 'تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة')">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/tv_unit_slats.png" alt="تكسيات شرائح خشبية" loading="lazy">
+            <div class="portfolio-zoom-badge">🔍 تكبير</div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة</h3>
             <span class="portfolio-tag">شرائح خشب • تأسيس كهرباء</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 3 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/makeup_vanity_led.png', 'تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد خلفية دافئة وأدراج معلقة')">
+        <!-- Photo 4 -->
+        <article class="portfolio-item gallery-item" data-category="bedroom" onclick="openLightbox('portfolio_images/makeup_vanity_led.png', 'تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد خلفية دافئة وأدراج معلقة')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/makeup_vanity_led.png" alt="تسريحة ميك آب بمرايا مضيئة">
+            <img src="portfolio_images/makeup_vanity_led.png" alt="تسريحة ميك آب بمرايا مضيئة" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد خلفية دافئة وأدراج معلقة</div>
+            <h3 class="portfolio-title">تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد خلفية دافئة وأدراج معلقة</h3>
             <span class="portfolio-tag">تسريحات مودرن • إضاءة ديكورية</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 4 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/bedroom_headboard.png', 'تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة')">
+        <!-- Photo 5 -->
+        <article class="portfolio-item gallery-item" data-category="bedroom" onclick="openLightbox('portfolio_images/bedroom_headboard.png', 'تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/bedroom_headboard.png" alt="تكسية خلفية سرير">
+            <img src="portfolio_images/bedroom_headboard.png" alt="تكسية خلفية سرير" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة</div>
+            <h3 class="portfolio-title">تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة</h3>
             <span class="portfolio-tag">غرف نوم فندقية • موبيليا</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 5 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/dressing_room_parquet.png', 'ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية')">
+        <!-- Photo 6 -->
+        <article class="portfolio-item gallery-item" data-category="closet" onclick="openLightbox('portfolio_images/luxury_closet_lighting.jpg', 'تصميم وتفصيل دريسنج روم مفتوح بإضاءات رفوف ليد ذكية وتقسيمات منظمة للملابس')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/dressing_room_parquet.png" alt="دريسنج روم وباركيه">
+            <img src="portfolio_images/luxury_closet_lighting.jpg" alt="دريسنج روم مع إضاءة ليد" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية</div>
+            <h3 class="portfolio-title">تصميم وتفصيل دريسنج روم مفتوح بإضاءات رفوف ليد ذكية وتقسيمات منظمة للملابس</h3>
+            <span class="portfolio-tag">دريسنج روم • إنارة رفوف</span>
+          </div>
+        </article>
+
+        <!-- Photo 7 -->
+        <article class="portfolio-item gallery-item" data-category="closet doors" onclick="openLightbox('portfolio_images/dressing_room_parquet.png', 'ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية')">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/dressing_room_parquet.png" alt="دريسنج روم وباركيه" loading="lazy">
+            <div class="portfolio-zoom-badge">🔍 تكبير</div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية</h3>
             <span class="portfolio-tag">دريسنج روم • باركيه</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 6 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/flush_hidden_door.png', 'تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة')">
+        <!-- Photo 8 -->
+        <article class="portfolio-item gallery-item" data-category="doors closet" onclick="openLightbox('portfolio_images/flush_hidden_door.png', 'تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/flush_hidden_door.png" alt="أبواب مخفية">
+            <img src="portfolio_images/flush_hidden_door.png" alt="أبواب مخفية" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة</div>
+            <h3 class="portfolio-title">تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة</h3>
             <span class="portfolio-tag">أبواب مخفية • تكسيات حائط</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 7 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/herringbone_parquet.jpg', 'تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية')">
+        <!-- Photo 9 -->
+        <article class="portfolio-item gallery-item" data-category="doors" onclick="openLightbox('portfolio_images/herringbone_parquet.jpg', 'تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/herringbone_parquet.jpg" alt="باركيه هيرنجبون">
+            <img src="portfolio_images/herringbone_parquet.jpg" alt="باركيه هيرنجبون" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية</div>
+            <h3 class="portfolio-title">تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية</h3>
             <span class="portfolio-tag">باركيه هيرنجبون • دقة تسوية</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 8 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/geometric_tv_wall.png', 'جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة')">
+        <!-- Photo 10 -->
+        <article class="portfolio-item gallery-item" data-category="closet tv" onclick="openLightbox('portfolio_images/luxury_hall_paneling.jpg', 'تكسيات جدارية ممتدة لمدخل وصالة استقبال مطعمة بإنارة مخفية وبديل خشب فاخر')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/geometric_tv_wall.png" alt="جدارية شاشة بجروفات هندسية">
+            <img src="portfolio_images/luxury_hall_paneling.jpg" alt="تكسيات ممرات وصالات" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة</div>
+            <h3 class="portfolio-title">تكسيات جدارية ممتدة لمدخل وصالة استقبال مطعمة بإنارة مخفية وبديل خشب فاخر</h3>
+            <span class="portfolio-tag">تكسيات صالات • بديل خشب</span>
+          </div>
+        </article>
+
+        <!-- Photo 11 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/geometric_tv_wall.png', 'جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة')">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/geometric_tv_wall.png" alt="جدارية شاشة بجروفات هندسية" loading="lazy">
+            <div class="portfolio-zoom-badge">🔍 تكبير</div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة</h3>
             <span class="portfolio-tag">جروفات هندسية • مرايا</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 9 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/tv_floating_console.png', 'تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية')">
+        <!-- Photo 12 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/tv_floating_console.png', 'تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/tv_floating_console.png" alt="مكتبة وكنسول معلق">
+            <img src="portfolio_images/tv_floating_console.png" alt="مكتبة وكنسول معلق" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية</div>
+            <h3 class="portfolio-title">تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية</h3>
             <span class="portfolio-tag">مكتبات خشبية • كنسول معلق</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 10 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/curved_corner_tv.png', 'ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه')">
+        <!-- Photo 13 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/curved_corner_tv.png', 'ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/curved_corner_tv.png" alt="شاشة زاوية بأعمدة منحنية">
+            <img src="portfolio_images/curved_corner_tv.png" alt="شاشة زاوية بأعمدة منحنية" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه</div>
+            <h3 class="portfolio-title">ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه</h3>
             <span class="portfolio-tag">أعمدة خشبية منحنية • إنارة</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 11 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/curved_accent_wall.png', 'تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون')">
+        <!-- Photo 14 -->
+        <article class="portfolio-item gallery-item" data-category="tv" onclick="openLightbox('portfolio_images/curved_accent_wall.png', 'تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/curved_accent_wall.png" alt="تكسية جدارية منحنية">
+            <img src="portfolio_images/curved_accent_wall.png" alt="تكسية جدارية منحنية" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون</div>
+            <h3 class="portfolio-title">تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون</h3>
             <span class="portfolio-tag">أعمدة دائرية • ليد بروفايل</span>
           </div>
-        </div>
+        </article>
 
-        <!-- Item 12 -->
-        <div class="portfolio-item" onclick="openLightbox('portfolio_images/luxury_bed_paneling.png', 'تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير')">
+        <!-- Photo 15 -->
+        <article class="portfolio-item gallery-item" data-category="bedroom" onclick="openLightbox('portfolio_images/luxury_bed_paneling.png', 'تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير')">
           <div class="portfolio-img-box">
-            <img src="portfolio_images/luxury_bed_paneling.png" alt="تكسيات جدران غرف نوم">
+            <img src="portfolio_images/luxury_bed_paneling.png" alt="تكسيات جدران غرف نوم" loading="lazy">
             <div class="portfolio-zoom-badge">🔍 تكبير</div>
           </div>
           <div class="portfolio-info">
-            <div class="portfolio-title">تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير</div>
+            <h3 class="portfolio-title">تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير</h3>
             <span class="portfolio-tag">تكسيات أسقف وجدران • غرف نوم</span>
           </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Professional Experience & Resume -->
+    <section class="content-section" style="background: #FAF7F2; border-top: 1px solid var(--border-color);">
+      <div class="section-header-box">
+        <h2 class="section-title">النبذة والخبرات المهنية (25 عاماً)</h2>
+        <p class="section-subtitle">مسيرة مهنية مشرفة في كبرى مصانع وورش النجارة والديكور بالمملكة واليمن</p>
+      </div>
+
+      <div class="summary-box">
+        معلم وخبير نجارة موبيليا وأعمال ديكور داخلي بخبرة عريقة تتجاوز <strong>25 عاماً في الصنعة</strong> (منها 4 سنوات داخل المملكة العربية السعودية - الدمام، و21 عاماً في اليمن). أتمتع بإتقان شامل لتفصيل وتنفيذ الموبيليا والأثاث الراقي (غرف نوم، دواليب، مطابخ، صالونات)، وخبير متخصص في <strong>تنفيذ تكسيات الجدران الحديثة وديكورات الشاشات التلفزيونية العصرية (TV Units)</strong>، مع <strong>احتراف تركيب أرضيات الباركيه والنعلات</strong>، و<strong>إتقان التمديدات الكهربائية الديكورية المصاحبة (إنارة الليد المخفية، ليد بروفايل، وأفياش الشاشات)</strong> لتسليم أعمال ديكورية متكاملة بأعلى دقة وتشطيب هندسي راقٍ.
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">معلم نجار موبيليا وديكورات داخلية وتكسيات</div>
+            <div class="timeline-period">2022 – حتى الآن (4 سنوات)</div>
+          </div>
+          <div class="timeline-company">المملكة العربية السعودية — الدمام والمنطقة الشرقية</div>
+          <ul class="timeline-list">
+            <li>تنفيذ وتفصيل أحدث موديلات خلفيات الشاشات العصرية (TV Units) وتكسيات الحوائط (بديل خشب، بديل رخام، بانوهات).</li>
+            <li>تفصيل وتركيب غرف النوم المودرن الفندقية، الكومودينات المعلقة، وتسريحات الميك آب بمرايا مقوسة مع ليد مخفي.</li>
+            <li>تنفيذ ممرات وغرف الدريسنج روم (Dressing Rooms) بدواليب خشبية وواجهات زجاجية وإضاءات رفوف داخلية.</li>
+            <li>تفصيل وتركيب الأبواب المخفية (Flush Hidden Doors) المتساوية انسيابياً مع تكسيات الجدران.</li>
+            <li>تركيب أرضيات الباركيه بأنواعها (العادي والمتعرج Herringbone) مع ضبط النعلات والفواصل بدقة تامة.</li>
+            <li>إتقان التأسيسات والتوصيلات الكهربائية الديكورية المدمجة، وتركيب مفاتيح وأفياش الشاشات ومحولات الليد.</li>
+          </ul>
         </div>
 
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-role">معلم أول نجارة وتصنيع موبيليا وديكور</div>
+            <div class="timeline-period">2001 – 2022 (21 عاماً)</div>
+          </div>
+          <div class="timeline-company">اليمن — ورش ومصانع النجارة المتقدمة</div>
+          <ul class="timeline-list">
+            <li>إدارة وتنفيذ كافة مراحل التصنيع الخشبي للموبيليا الكاملة (غرف نوم كلاسيك ومودرن، مطابخ، صالونات، دواليب).</li>
+            <li>قص وتجميع وتشريح الأخشاب الطبيعية والصناعية (MDF، زان، سويدي، سنديان، لاتيه، قشرة طبيعية وفورميكا).</li>
+            <li>استخدام وصيانة معدات النجارة الاحترافية الثابتة والمحمولة بدقة وأمان تام.</li>
+            <li>الإشراف على فرق العمل من فنيين ومساعدين وضمان تسليم الأعمال وفق أصول الصنعة ورضا العملاء.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Skills Grid -->
+      <h3 style="font-size: 1.25rem; font-weight: 900; color: var(--wood-dark); margin: 30px 0 16px;">المهارات الفنية والتخصصية</h3>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-title">📺 ديكورات وتكسيات الشاشات</div>
+          <div class="skill-card-desc">تفصيل خلفيات الشاشات العصرية بحواف منحنية (Curved)، رفوف معلقة، وتكسيات خشبية هندسية.</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🪵 أرضيات الباركيه والأبواب</div>
+          <div class="skill-card-desc">تركيب باركيه عادي ومتعرج (Herringbone)، تثبيت النعلات، وتفصيل وتركيب الأبواب المخفية (Flush Doors).</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">⚡ التمديدات الكهربائية الديكورية</div>
+          <div class="skill-card-desc">تأسيس وتركيب إضاءات الليد المخفية، ليد بروفايل، سبوت لايت، ونقاط وأفياش الشاشات الجدارية.</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🛏️ غرف النوم والدريسنج روم</div>
+          <div class="skill-card-desc">تفصيل غرف النوم المودرن، الكومودينات العائمة، دواليب السحاب، والخزائن الزجاجية الفاخرة.</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">📐 القياسات وقراءة المخططات</div>
+          <div class="skill-card-desc">أخذ المقاسات الموقعية بدقة مليمترية، قراءة المخططات والكتالوجات، وحل المعضلات المعمارية بالموقع.</div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-title">🤝 سمات العمل والالتزام</div>
+          <div class="skill-card-desc">الأمانة التامة، الالتزام الصارم بمواعيد التسليم، سرعة الإنجاز، وحسن التعامل مع العملاء والمقاولين.</div>
+        </div>
       </div>
     </section>
 
@@ -986,6 +1313,7 @@
   </div>
 
   <script>
+    // Interactive Lightbox
     function openLightbox(imgSrc, captionText) {
       const modal = document.getElementById('lightboxModal');
       const img = document.getElementById('lightboxImg');
@@ -1007,6 +1335,25 @@
         closeLightbox();
       }
     });
+
+    // Gallery Category Filtering
+    function filterGallery(category, buttonElement) {
+      const tabs = document.querySelectorAll('.filter-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttonElement.classList.add('active');
+
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all') {
+          item.style.display = '';
+        } else if (itemCat && itemCat.includes(category)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
   </script>
 
 </body>
