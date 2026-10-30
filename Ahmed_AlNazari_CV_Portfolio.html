@@ -10,7 +10,7 @@
   <style>
     :root {
       --primary-wood: #8B5A2B;
-      --wood-dark: #4A2E1B;
+      --wood-dark: #5C3A21;
       --wood-light: #C49A6C;
       --wood-cream: #FDFBF7;
       --bg-card: #FFFFFF;
@@ -18,6 +18,7 @@
       --text-main: #2A2421;
       --text-muted: #6B625B;
       --border-color: #E8E0D5;
+      --shadow-soft: 0 10px 30px rgba(92, 58, 33, 0.08);
     }
 
     * {
@@ -28,29 +29,29 @@
 
     body {
       font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
-      background-color: #EFE9E2;
+      background-color: #F4EFEB;
       color: var(--text-main);
-      line-height: 1.45;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     .toolbar {
       position: sticky;
       top: 0;
-      background: rgba(74, 46, 27, 0.96);
+      background: rgba(92, 58, 33, 0.95);
       backdrop-filter: blur(10px);
       color: #fff;
-      padding: 10px 24px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
     .toolbar-title {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -60,135 +61,157 @@
       background: #D4AF37;
       color: #2A2421;
       border: none;
-      padding: 7px 16px;
-      font-size: 0.9rem;
+      padding: 8px 18px;
+      font-size: 0.95rem;
       font-weight: 700;
       border-radius: 6px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
     .toolbar-btn:hover {
       background: #E8C14E;
+      transform: translateY(-2px);
     }
 
-    /* Strict A4 Pages */
-    .a4-page {
-      width: 210mm;
-      height: 297mm;
-      max-height: 297mm;
-      margin: 20px auto;
+    .page-container {
+      max-width: 900px;
+      margin: 30px auto;
       background: #fff;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      position: relative;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border: 1px solid var(--border-color);
     }
 
-    /* Page 1: CV */
     .header-banner {
-      background: linear-gradient(135deg, #3B2313 0%, #5C3A21 60%, #7A4B27 100%);
+      background: linear-gradient(135deg, #4A2E1B 0%, #754724 50%, #8B5A2B 100%);
       color: #fff;
-      padding: 24px 30px 18px;
-      border-bottom: 4px solid var(--accent-gold);
+      padding: 40px 45px 35px;
+      position: relative;
+    }
+
+    .header-banner::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .header-name {
-      font-size: 1.95rem;
+      font-size: 2.2rem;
       font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
       color: #FFFFFF;
-      line-height: 1.2;
     }
 
     .header-title {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #F3E5AB;
-      margin-top: 4px;
-      margin-bottom: 8px;
+      margin-bottom: 15px;
     }
 
     .header-badge {
       display: inline-block;
-      background: rgba(212, 175, 55, 0.2);
+      background: rgba(212, 175, 55, 0.25);
       border: 1px solid #D4AF37;
       color: #FFF8E7;
-      padding: 2px 10px;
-      border-radius: 15px;
-      font-size: 0.78rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 14px;
-      padding-top: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 25px;
+      padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
+      gap: 10px;
+      font-size: 0.95rem;
       color: #F5EBE1;
     }
 
-    .page1-content {
-      padding: 22px 30px;
-      flex-grow: 1;
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .content-body {
+      padding: 40px 45px;
     }
 
     .section-title {
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--wood-dark);
-      margin-bottom: 10px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      position: relative;
     }
 
     .section-title::before {
       content: "";
-      width: 4px;
-      height: 18px;
+      width: 6px;
+      height: 24px;
       background: var(--primary-wood);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     .summary-box {
       background: #FDFBF7;
-      border-right: 3px solid var(--primary-wood);
-      padding: 12px 16px;
-      font-size: 0.88rem;
-      line-height: 1.6;
+      border-right: 4px solid var(--primary-wood);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
       color: #3E3631;
-      margin-bottom: 16px;
-      border-radius: 0 6px 6px 0;
+      margin-bottom: 35px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
 
     .timeline {
       position: relative;
-      margin-bottom: 16px;
-      padding-right: 14px;
+      margin-bottom: 35px;
+      padding-right: 20px;
       border-right: 2px solid var(--border-color);
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 14px;
+      margin-bottom: 30px;
     }
 
     .timeline-item:last-child {
@@ -197,57 +220,57 @@
 
     .timeline-dot {
       position: absolute;
-      right: -19px;
+      right: -27px;
       top: 4px;
-      width: 8px;
-      height: 8px;
+      width: 12px;
+      height: 12px;
       background: var(--primary-wood);
-      border: 2px solid #FFF;
+      border: 3px solid #FFF;
       border-radius: 50%;
-      box-shadow: 0 0 0 1px var(--primary-wood);
+      box-shadow: 0 0 0 2px var(--primary-wood);
     }
 
     .timeline-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
     }
 
     .timeline-role {
-      font-size: 0.98rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--wood-dark);
     }
 
     .timeline-period {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       background: #EFE6DC;
       color: var(--wood-dark);
-      padding: 1px 7px;
-      border-radius: 8px;
+      padding: 2px 10px;
+      border-radius: 12px;
       font-weight: 700;
     }
 
     .timeline-company {
-      font-size: 0.84rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--primary-wood);
-      margin-bottom: 4px;
+      margin-bottom: 10px;
     }
 
     .timeline-list {
       list-style: none;
-      padding-right: 4px;
+      padding-right: 5px;
     }
 
     .timeline-list li {
       position: relative;
-      padding-right: 14px;
-      margin-bottom: 3px;
-      font-size: 0.82rem;
+      padding-right: 18px;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
       color: #4A423D;
-      line-height: 1.45;
     }
 
     .timeline-list li::before {
@@ -255,79 +278,75 @@
       position: absolute;
       right: 0;
       color: var(--primary-wood);
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
     }
 
     .skill-card {
       background: #FAF6F0;
       border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 8px 10px;
+      border-radius: 8px;
+      padding: 16px 20px;
+      transition: transform 0.2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-2px);
     }
 
     .skill-card-title {
-      font-size: 0.85rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--wood-dark);
-      margin-bottom: 2px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .skill-card-desc {
-      font-size: 0.74rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.35;
+      line-height: 1.5;
     }
 
-    /* Pages 2 & 3: Portfolio (6 items per page) */
-    .page-header-mini {
+    /* Portfolio Section */
+    .portfolio-header {
       background: #3B2313;
       color: #fff;
-      padding: 14px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 3px solid var(--accent-gold);
+      padding: 30px 45px;
+      margin-top: 40px;
+      border-radius: 8px 8px 0 0;
     }
 
-    .page-header-mini h2 {
-      font-size: 1.15rem;
-      font-weight: 800;
-    }
-
-    .page-header-mini span {
-      font-size: 0.82rem;
-      color: #F3E5AB;
-    }
-
-    .portfolio-grid-page {
+    .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding: 18px 24px;
-      flex-grow: 1;
-      align-content: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      padding: 35px 45px;
+      background: #FDFBF8;
     }
 
     .portfolio-item {
       background: #fff;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--border-color);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
       display: flex;
       flex-direction: column;
     }
 
     .portfolio-img-box {
       width: 100%;
-      height: 195px;
+      height: 270px;
       overflow: hidden;
       background: #EDE4DA;
       position: relative;
@@ -337,55 +356,61 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img-box img {
+      transform: scale(1.04);
     }
 
     .portfolio-info {
-      padding: 9px 10px;
+      padding: 16px 20px;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex-grow: 1;
     }
 
     .portfolio-title {
-      font-size: 0.82rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--wood-dark);
-      margin-bottom: 4px;
-      line-height: 1.3;
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .portfolio-tag {
       display: inline-block;
-      font-size: 0.68rem;
+      font-size: 0.78rem;
       background: #F1E7DD;
       color: var(--wood-dark);
-      padding: 2px 6px;
-      border-radius: 3px;
+      padding: 3px 10px;
+      border-radius: 4px;
       font-weight: 700;
       align-self: flex-start;
+      margin-top: 6px;
     }
 
-    .page-footer-mini {
+    .footer-bar {
       background: #2A180D;
       color: #F0E6DD;
-      padding: 10px 24px;
-      font-size: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.95rem;
     }
 
-    .page-footer-mini a {
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact a {
       color: #F3E5AB;
       text-decoration: none;
       font-weight: 700;
-    }
-
-    @page {
-      size: A4 portrait;
-      margin: 0;
     }
 
     @media print {
@@ -395,18 +420,31 @@
       .toolbar {
         display: none;
       }
-      .a4-page {
+      .page-container {
+        max-width: 100%;
         margin: 0;
         box-shadow: none;
         border: none;
-        page-break-after: always;
-        break-after: page;
-        height: 297mm;
-        max-height: 297mm;
+        border-radius: 0;
       }
-      .a4-page:last-child {
-        page-break-after: avoid;
-        break-after: avoid;
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        page-break-before: always;
+      }
+      .portfolio-item {
+        page-break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-banner, .content-body, .portfolio-grid {
+        padding: 25px 20px;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-name {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -416,9 +454,9 @@
   <!-- Floating Navigation Toolbar -->
   <div class="toolbar">
     <div class="toolbar-title">
-      <span>🪵 السيرة الذاتية ومعرض الأعمال (3 صفحات مدمجة) | أحمد علي قاسم النظاري</span>
+      <span>🪵 السيرة الذاتية ومعرض الأعمال | أحمد علي قاسم النظاري</span>
     </div>
-    <div style="display: flex; gap: 10px;">
+    <div style="display: flex; gap: 12px;">
       <a href="https://wa.me/966530216295" target="_blank" class="toolbar-btn" style="background: #25D366; color: #fff;">
         💬 واتساب مباشر
       </a>
@@ -428,30 +466,37 @@
     </div>
   </div>
 
-  <!-- ==================== PAGE 1: RESUME (CV) ==================== -->
-  <div class="a4-page">
+  <div class="page-container">
+
+    <!-- Header Section -->
     <header class="header-banner">
-      <h1 class="header-name">أحمد علي قاسم النظاري</h1>
-      <div class="header-title">معلم أول نجارة موبيليا وديكورات داخلية (شاشات • باركيه • تكسيات)</div>
-      <span class="header-badge">⭐ أكثر من 25 عاماً من الخبرة والإتقان المهني</span>
+      <div class="header-content">
+        <div>
+          <h1 class="header-name">أحمد علي قاسم النظاري</h1>
+          <div class="header-title">معلم أول نجارة موبيليا وديكورات داخلية (شاشات • باركيه • تكسيات)</div>
+          <span class="header-badge">⭐ أكثر من 25 عاماً من الخبرة والإتقان المهني</span>
+        </div>
+      </div>
 
       <div class="contact-grid">
         <div class="contact-item">
-          <span>📱</span>
+          <div class="contact-icon">📱</div>
           <div><strong>الجوال / واتساب:</strong> <span dir="ltr">+966 53 021 6295</span></div>
         </div>
         <div class="contact-item">
-          <span>📍</span>
-          <div><strong>الإقامة:</strong> الدمام، المملكة العربية السعودية</div>
+          <div class="contact-icon">📍</div>
+          <div><strong>محل الإقامة:</strong> الدمام، المملكة العربية السعودية</div>
         </div>
         <div class="contact-item">
-          <span>🌐</span>
+          <div class="contact-icon">🌐</div>
           <div><strong>الجنسية:</strong> يمني | <strong>الميلاد:</strong> 1976م</div>
         </div>
       </div>
     </header>
 
-    <main class="page1-content">
+    <!-- Main Content Body -->
+    <main class="content-body">
+
       <!-- Summary -->
       <section>
         <h2 class="section-title">النبذة المهنية</h2>
@@ -503,201 +548,196 @@
       <section>
         <h2 class="section-title">المهارات الفنية والحرفية</h2>
         <div class="skills-grid">
+          
           <div class="skill-card">
-            <div class="skill-card-title">📺 تكسيات الشاشات</div>
-            <div class="skill-card-desc">تفصيل خلفيات الشاشات العصرية بحواف كيرف (Curved) وكنسول معلق.</div>
+            <div class="skill-card-title">📺 ديكورات وتكسيات الشاشات</div>
+            <div class="skill-card-desc">تفصيل خلفيات الشاشات العصرية بحواف منحنية (Curved)، رفوف معلقة، وتكسيات خشبية هندسية.</div>
           </div>
+
           <div class="skill-card">
-            <div class="skill-card-title">🪵 الباركيه والأبواب</div>
-            <div class="skill-card-desc">تركيب باركيه عادي وهيرنجبون، وتفصيل الأبواب المخفية (Flush Doors).</div>
+            <div class="skill-card-title">🪵 أرضيات الباركيه والأبواب</div>
+            <div class="skill-card-desc">تركيب باركيه عادي ومتعرج (Herringbone)، تثبيت النعلات، وتفصيل وتركيب الأبواب المخفية (Flush Doors).</div>
           </div>
+
           <div class="skill-card">
-            <div class="skill-card-title">⚡ كهرباء الديكور</div>
-            <div class="skill-card-desc">تأسيس وتركيب إضاءات الليد المخفية، ليد بروفايل، وأفياش الشاشات.</div>
+            <div class="skill-card-title">⚡ التمديدات الكهربائية الديكورية</div>
+            <div class="skill-card-desc">تأسيس وتركيب إضاءات الليد المخفية، ليد بروفايل، سبوت لايت، ونقاط وأفياش الشاشات الجدارية.</div>
           </div>
+
           <div class="skill-card">
-            <div class="skill-card-title">🛏️ غرف النوم والدريسنج</div>
-            <div class="skill-card-desc">تفصيل غرف النوم المودرن، الكومودينات العائمة، والخزائن الزجاجية.</div>
+            <div class="skill-card-title">🛏️ غرف النوم والدريسنج روم</div>
+            <div class="skill-card-desc">تفصيل غرف النوم المودرن، الكومودينات العائمة، دواليب السحاب، والخزائن الزجاجية الفاخرة.</div>
           </div>
+
           <div class="skill-card">
-            <div class="skill-card-title">📐 المقاسات والمخططات</div>
-            <div class="skill-card-desc">أخذ المقاسات الموقعية بدقة مليمترية وقراءة المخططات الهندسية.</div>
+            <div class="skill-card-title">📐 القياسات وقراءة المخططات</div>
+            <div class="skill-card-desc">أخذ المقاسات الموقعية بدقة مليمترية، قراءة المخططات والكتالوجات، وحل المعضلات المعمارية بالموقع.</div>
           </div>
+
           <div class="skill-card">
-            <div class="skill-card-title">🤝 سمات العمل</div>
-            <div class="skill-card-desc">الأمانة التامة، الالتزام الصارم بمواعيد التسليم، وسرعة الإتقان.</div>
+            <div class="skill-card-title">🤝 سمات العمل والالتزام</div>
+            <div class="skill-card-desc">الأمانة التامة، الالتزام الصارم بمواعيد التسليم، سرعة الإنجاز، وحسن التعامل مع العملاء والمقاولين.</div>
           </div>
+
         </div>
       </section>
+
     </main>
 
-    <div class="page-footer-mini">
-      <div>الصفحة 1 من 3 — السيرة الذاتية المهنية</div>
-      <div>📞 <a href="tel:+966530216295" dir="ltr">+966 53 021 6295</a></div>
-    </div>
-  </div>
-
-  <!-- ==================== PAGE 2: PORTFOLIO PART 1 (6 ITEMS) ==================== -->
-  <div class="a4-page">
-    <div class="page-header-mini">
-      <h2>📷 معرض الأعمال الحية الموثقة — (الجزء الأول)</h2>
-      <span>المعلم أحمد علي قاسم النظاري • الدمام</span>
-    </div>
-
-    <div class="portfolio-grid-page">
-      <!-- Item 1 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/tv_unit_luxury.png" alt="ديكور شاشة فاخر مع إضاءة ليد">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق</div>
-          <span class="portfolio-tag">تكسيات شاشات • ليد بروفايل</span>
-        </div>
+    <!-- Portfolio Section -->
+    <section>
+      <div class="portfolio-header">
+        <h2 style="font-size: 1.6rem; font-weight: 900; margin-bottom: 6px;">📷 معرض الأعمال الحية الموثقة (Portfolio)</h2>
+        <p style="color: #F3E5AB; font-size: 1rem;">نماذج حقيقية من مشاريع تم تنفيذها بيد المعلم أحمد علي قاسم النظاري في الدمام والمملكة</p>
       </div>
 
-      <!-- Item 2 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/tv_unit_slats.png" alt="تكسيات شرائح خشبية">
+      <div class="portfolio-grid">
+
+        <!-- Item 1 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/tv_unit_luxury.png" alt="ديكور شاشة فاخر مع إضاءة ليد">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">ديكور شاشة صالة عصري بحواف منحنية (Curved) مع إنارة ليد مخفية وكنسول خشبي معلق</div>
+            <span class="portfolio-tag">تكسيات شاشات • ليد بروفايل</span>
+          </div>
         </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة</div>
-          <span class="portfolio-tag">شرائح خشب • تأسيس كهرباء</span>
+
+        <!-- Item 2 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/tv_unit_slats.png" alt="تكسيات شرائح خشبية">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسيات جدارية شرائح خشبية متناسقة مع إضاءة رأسية وتأسيس كامل لشبكة وكهرباء الشاشة</div>
+            <span class="portfolio-tag">شرائح خشب • تأسيس كهرباء</span>
+          </div>
         </div>
+
+        <!-- Item 3 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/makeup_vanity_led.png" alt="تسريحة ميك آب بمرايا مضيئة">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد خلفية دافئة وأدراج معلقة</div>
+            <span class="portfolio-tag">تسريحات مودرن • إضاءة ديكورية</span>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/bedroom_headboard.png" alt="تكسية خلفية سرير">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة</div>
+            <span class="portfolio-tag">غرف نوم فندقية • موبيليا</span>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/dressing_room_parquet.png" alt="دريسنج روم وباركيه">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية</div>
+            <span class="portfolio-tag">دريسنج روم • باركيه</span>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/flush_hidden_door.png" alt="أبواب مخفية">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة</div>
+            <span class="portfolio-tag">أبواب مخفية • تكسيات حائط</span>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/herringbone_parquet.jpg" alt="باركيه هيرنجبون">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية</div>
+            <span class="portfolio-tag">باركيه هيرنجبون • دقة تسوية</span>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/geometric_tv_wall.png" alt="جدارية شاشة بجروفات هندسية">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة</div>
+            <span class="portfolio-tag">جروفات هندسية • مرايا</span>
+          </div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/tv_floating_console.png" alt="مكتبة وكنسول معلق">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية</div>
+            <span class="portfolio-tag">مكتبات خشبية • كنسول معلق</span>
+          </div>
+        </div>
+
+        <!-- Item 10 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/curved_corner_tv.png" alt="شاشة زاوية بأعمدة منحنية">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه</div>
+            <span class="portfolio-tag">أعمدة خشبية منحنية • إنارة</span>
+          </div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/curved_accent_wall.png" alt="تكسية جدارية منحنية">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون</div>
+            <span class="portfolio-tag">أعمدة دائرية • ليد بروفايل</span>
+          </div>
+        </div>
+
+        <!-- Item 12 -->
+        <div class="portfolio-item">
+          <div class="portfolio-img-box">
+            <img src="portfolio_images/luxury_bed_paneling.png" alt="تكسيات جدران غرف نوم">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-title">تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير</div>
+            <span class="portfolio-tag">تكسيات أسقف وجدران • غرف نوم</span>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <!-- Item 3 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/makeup_vanity_led.png" alt="تسريحة ميك آب بمرايا مضيئة">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تسريحة ميك آب عصرية مدمجة بجدارية خشبية مع مرايا مقوسة بإضاءة ليد وأدراج معلقة</div>
-          <span class="portfolio-tag">تسريحات مودرن • إضاءة ديكورية</span>
-        </div>
+    <!-- Footer -->
+    <footer class="footer-bar">
+      <div>للتواصل والتعاقد المباشر مع المعلم أحمد علي قاسم النظاري:</div>
+      <div class="footer-contact">
+        <div>📞 اتصال: <a href="tel:+966530216295" dir="ltr">+966 53 021 6295</a></div>
+        <div>💬 واتساب: <a href="https://wa.me/966530216295" target="_blank" dir="ltr">+966 53 021 6295</a></div>
+        <div>📍 الدمام والمنطقة الشرقية، المملكة العربية السعودية</div>
       </div>
+    </footer>
 
-      <!-- Item 4 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/bedroom_headboard.png" alt="تكسية خلفية سرير">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسية خلفية سرير غرفة نوم رئيسية مدمجة مع كومودينات معلقة وأرفف دواليب متناسقة</div>
-          <span class="portfolio-tag">غرف نوم فندقية • موبيليا</span>
-        </div>
-      </div>
-
-      <!-- Item 5 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/dressing_room_parquet.png" alt="دريسنج روم وباركيه">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">ممر دريسنج روم متكامل مع دواليب واجهات زجاجية مضيئة وتركيب أرضيات باركيه خشبية</div>
-          <span class="portfolio-tag">دريسنج روم • باركيه</span>
-        </div>
-      </div>
-
-      <!-- Item 6 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/flush_hidden_door.png" alt="أبواب مخفية">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسية جدارية خشبية كاملة مدمج بها أبواب مخفية (Flush Hidden Doors) بانسيابية تامة</div>
-          <span class="portfolio-tag">أبواب مخفية • تكسيات حائط</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-footer-mini">
-      <div>الصفحة 2 من 3 — نماذج الشاشات والتكسيات والدريسنج روم</div>
-      <div>💬 واتساب: <a href="https://wa.me/966530216295" target="_blank" dir="ltr">+966 53 021 6295</a></div>
-    </div>
-  </div>
-
-  <!-- ==================== PAGE 3: PORTFOLIO PART 2 (6 ITEMS MERGED) ==================== -->
-  <div class="a4-page">
-    <div class="page-header-mini">
-      <h2>📷 معرض الأعمال الحية الموثقة — (الجزء الثاني)</h2>
-      <span>المعلم أحمد علي قاسم النظاري • الدمام</span>
-    </div>
-
-    <div class="portfolio-grid-page">
-      <!-- Item 7 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/herringbone_parquet.jpg" alt="باركيه هيرنجبون">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تنفيذ وتركيب أرضيات باركيه متعرجة بنقش الهيرنجبون (Herringbone) بدقة أبعاد وفواصل عالية</div>
-          <span class="portfolio-tag">باركيه هيرنجبون • دقة تسوية</span>
-        </div>
-      </div>
-
-      <!-- Item 8 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/geometric_tv_wall.png" alt="جدارية شاشة بجروفات هندسية">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">جدارية شاشة خشبية مطعمة بجروفات هندسية دقيقة ومرايا جانبية عاكسة لإضفاء اتساع وفخامة</div>
-          <span class="portfolio-tag">جروفات هندسية • مرايا</span>
-        </div>
-      </div>
-
-      <!-- Item 9 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/tv_floating_console.png" alt="مكتبة وكنسول معلق">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسية جدار كامل مدمجة بمكتبة خشبية عمودية وكنسول تلفزيون معلق ممتد مع إنارة سقفية مخفية</div>
-          <span class="portfolio-tag">مكتبات خشبية • كنسول معلق</span>
-        </div>
-      </div>
-
-      <!-- Item 10 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/curved_corner_tv.png" alt="شاشة زاوية بأعمدة منحنية">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">ديكور شاشة زاوية مميز بأعمدة خشبية منحنية نصف دائرية وإنارة شريطية متناغمة مع الباركيه</div>
-          <span class="portfolio-tag">أعمدة خشبية منحنية • إنارة</span>
-        </div>
-      </div>
-
-      <!-- Item 11 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/curved_accent_wall.png" alt="تكسية جدارية منحنية">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسية جدارية فخمة بأعمدة خشبية دائرية وإنارة رأسية ليد بروفايل مدمجة مع باركيه هيرنجبون</div>
-          <span class="portfolio-tag">أعمدة دائرية • ليد بروفايل</span>
-        </div>
-      </div>
-
-      <!-- Item 12 -->
-      <div class="portfolio-item">
-        <div class="portfolio-img-box">
-          <img src="portfolio_images/luxury_bed_paneling.png" alt="تكسيات جدران غرف نوم">
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">تكسيات جدارية ممتدة للسقف مع كمودينات معلقة وتنسيق كهرباء الإضاءة المعلقة للسرير</div>
-          <span class="portfolio-tag">تكسيات أسقف وجدران • غرف نوم</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Final Page Footer -->
-    <div class="page-footer-mini" style="background: #1F1109; padding: 12px 24px;">
-      <div>للتواصل والتعاقد المباشر: <strong style="color: #F3E5AB;">المعلم أحمد علي قاسم النظاري</strong> — الدمام والمنطقة الشرقية</div>
-      <div>📞 <a href="tel:+966530216295" dir="ltr">+966 53 021 6295</a></div>
-    </div>
   </div>
 
 </body>
